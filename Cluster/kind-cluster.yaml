@@ -6,6 +6,10 @@ networking:
   apiServerPort: 6443
 nodes:
   - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 30080
+        protocol: TCP
   - role: worker
   - role: worker
   - role: worker
